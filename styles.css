@@ -56,12 +56,28 @@ nav .logo {
 
 .section1 {
     height: 100vh;
-    background-image: url('background1.jpg');
+    background-image: url('blue.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center
+    background-position: center;
+    position: relative;
 }
+.section1::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .2;
 
+}
+.section1 > * {
+    z-index: 10;
+    position: relative;
+}
 .inner-content {
     display: block; 
     font-size: 30px;
@@ -152,6 +168,23 @@ nav .logo {
     font-size: 20px;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
+}
+#conference::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    z-index: 0;
+}
+#conference > * {
+    z-index: 10;
+    position: relative;
 }
 #conference-content {
     width: 75%;
@@ -182,13 +215,31 @@ nav .logo {
 }
 
 footer {
-    background-image: url('background1.jpg');
+    background-image: url('yellow.jpg');
     width: 100%;
     margin: auto;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 }
+footer::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    z-index: 0;
+}
+footer > * {
+    z-index: 10;
+    position: relative;
+}
+
 #footer-section {
     margin-left: 50px;
     padding-right: 50px;
@@ -326,6 +377,10 @@ footer {
         font-size: 1.6rem;
     }
 
+    .section1 {
+        z-index: 1;
+    }
+
     .thejourney {
        width: 100%;
     }
@@ -338,6 +393,9 @@ footer {
     .journey-img {
         width: 100%;
         float: none;
+    }
+    #conference {
+        z-index: 1;
     }
     #conference-content {
         width: 100%;
@@ -355,8 +413,14 @@ footer {
         margin-top: 100px;
         padding-bottom: 20px;
     }
+    footer {
+        z-index: -2;
+    }
     .footer-links a {
         margin-bottom: 10px;
+    }
+    .footer-links a:hover {
+
     }
     .footer-links {
         margin-bottom: 40px;
