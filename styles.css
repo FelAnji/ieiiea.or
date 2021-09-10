@@ -71,7 +71,7 @@ nav .logo {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: .2;
+    opacity: .5;
 
 }
 .section1 > * {
@@ -348,6 +348,10 @@ footer > * {
 }
 
 @media (max-width:800px) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
     nav .mainMenu {
         height: 100vh;
         position: fixed;
@@ -414,7 +418,7 @@ footer > * {
         padding-bottom: 20px;
     }
     footer {
-        z-index: -2;
+        z-index: 1;
     }
     .footer-links a {
         margin-bottom: 10px;
